@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOII in Overijssel: Het Verzet | Bram & Jari</title>
+    <title>WOII in Overijssel: Het Verzet</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -83,7 +83,7 @@
         <ul class="hidden md:flex space-x-8 text-sm font-bold tracking-wider">
             <li><a href="#tijdbalk" class="hover:text-[#d4af37] transition">TIJDBALK</a></li>
             <li><a href="#fysiek-spoor" class="hover:text-[#d4af37] transition">FYSIEK SPOOR</a></li>
-            <li><a href="#media-spoor" class="hover:text-[#d4af37] transition">MEDIA SPOOR</a></li>
+            <li><a href="#media-spoor" class="hover:text-[#d4af37] transition">MEDIA & MAATSCHAPPIJ</a></li>
             <li><a href="#bronnen" class="hover:text-[#d4af37] transition">BRONNEN</a></li>
         </ul>
     </div>
@@ -105,7 +105,7 @@
         <h1 class="text-5xl md:text-8xl font-bold mb-6 text-white museum-font tracking-tight">Het Verzet</h1>
         <div class="w-32 h-1 accent-bg mx-auto mb-8 opacity-70"></div>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed mb-8">
-            Een interactieve gallery walk gepresenteerd door Bram & Jari.
+            Heden en verleden - Meer dan geschiedenis!<br>Een interactieve gallery walk over de moed in onze eigen regio.
         </p>
         
         <!-- FULLSCREEN KIOSK KNOP -->
@@ -124,7 +124,7 @@
 <section id="tijdbalk" class="py-24 container mx-auto px-6 relative">
     <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl museum-font font-bold text-white mb-4">De Tijdbalk</h2>
-        <p class="text-gray-400 text-lg">Klik op de tijdbalk om deze te vergroten.</p>
+        <p class="text-gray-400 text-lg">De belangrijkste gebeurtenissen (Klik om te vergroten).</p>
     </div>
     
     <div class="max-w-6xl mx-auto glass-card p-4 rounded-lg relative group" data-aos="zoom-in" data-aos-delay="200">
@@ -142,23 +142,26 @@
     <div class="container mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl museum-font font-bold text-white mb-4">Fysiek Spoor</h2>
-            <p class="text-gray-400 text-lg">Ons veldonderzoek</p>
+            <p class="text-gray-400 text-lg">Sporen in het heden</p>
         </div>
         
         <div class="max-w-4xl mx-auto glass-card rounded-lg overflow-hidden flex flex-col md:flex-row" data-aos="fade-up" data-aos-delay="200">
             <div class="md:w-1/2 bg-[#0a0a0a] flex items-center justify-center p-2 relative group min-h-[350px]">
-                <!-- Vul hier jullie selfie in -->
-                <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Selfie Fysiek Spoor" class="w-full h-full object-cover rounded opacity-50 group-hover:opacity-100 zoomable-img transition duration-500" onclick="openLightbox(this.src)">
+                <!-- VUL HIER JULLIE EIGEN SELFIE IN -->
+                <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Spoorlijn Enschede-Gronau" class="w-full h-full object-cover rounded opacity-50 group-hover:opacity-100 zoomable-img transition duration-500" onclick="openLightbox(this.src)">
                 <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none opacity-100 group-hover:opacity-0 transition duration-300">
                     <p class="text-4xl mb-2">📸</p>
-                    <p class="text-sm text-gray-300 italic px-4 text-center">Klik om te vergroten</p>
+                    <p class="text-sm text-gray-300 italic px-4 text-center">Klik om te vergroten<br>(Selfie Spoorlijn Enschede)</p>
                 </div>
             </div>
             <div class="md:w-1/2 p-12 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-white mb-2 museum-font">Locatie: <span class="accent-color">[Vul in]</span></h3>
+                <h3 class="text-3xl font-bold text-white mb-2 museum-font">Locatie: <span class="accent-color">Spoorlijn Enschede-Gronau</span></h3>
                 <div class="w-12 h-0.5 accent-bg mb-6"></div>
                 <p class="text-gray-300 leading-relaxed text-lg">
-                    Tijdens ons veldonderzoek bezochten wij dit fysieke spoor van het verzet in Overijssel. Wij staan hier bij... [Vul 1 of 2 zinnen in, de rest vertellen jullie mondeling].
+                    Tijdens ons veldonderzoek bezochten wij deze grensspoorlijn. In september 1944 werd dit spoor, na het uitbreken van de spoorwegstaking, door het verzet gebruikt voor sabotage. 
+                </p>
+                <p class="text-gray-300 leading-relaxed text-lg mt-4">
+                    Later, in maart 1945 aan het einde van de oorlog, werd ditzelfde spoor ingezet voor de beruchte 'spooktreinen' waarmee dwangarbeiders en gevangenen door de regio werden vervoerd.
                 </p>
             </div>
         </div>
@@ -169,24 +172,38 @@
 <section id="media-spoor" class="py-24 container mx-auto px-6">
     <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl museum-font font-bold text-white mb-4">Media & Maatschappij</h2>
-        <p class="text-gray-400 text-lg">Propaganda, censuur en de illegale pers</p>
+        <p class="text-gray-400 text-lg">Praten we er vandaag de dag nog over?</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Kaart 1: Media Spoor -->
         <div class="glass-card rounded-lg p-8" data-aos="fade-right" data-aos-delay="100">
-            <div class="w-full h-56 bg-[#0a0a0a] rounded mb-6 flex items-center justify-center border border-gray-700/50 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1585241936939-f9c3ebfc3124?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Krantenknipsel 1" class="w-full h-full object-cover opacity-70 zoomable-img" onclick="openLightbox(this.src)">
+            <div class="w-full h-56 bg-[#0a0a0a] rounded mb-6 flex items-center justify-center border border-gray-700/50 overflow-hidden relative group">
+                <!-- VUL HIER EEN SCREENSHOT VAN DE TRAILER IN -->
+                <img src="https://images.unsplash.com/photo-1585241936939-f9c3ebfc3124?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="De Joodse Raad Trailer" class="w-full h-full object-cover opacity-60 zoomable-img" onclick="openLightbox(this.src)">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-100 group-hover:opacity-0 transition duration-300">
+                     <p class="text-sm text-gray-300 italic">Voeg screenshot "De Joodse Raad" toe</p>
+                </div>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3 museum-font">Titel van de Bron</h3>
-            <p class="text-gray-400 text-base leading-relaxed">Een korte uitleg over dit krantenknipsel of screenshot. Hoe werd media hier ingezet of juist tegengehouden?</p>
+            <h3 class="text-2xl font-bold text-white mb-3 museum-font">Media: De Joodse Raad (2024)</h3>
+            <p class="text-gray-400 text-base leading-relaxed">
+                De serie <em>De Joodse Raad</em> is erg populair geworden in Nederland. Het laat duidelijk zien hoe zwaar het voor de mensen was om keuzes te maken tijdens de bezetting. Mensen probeerden te overleven, maar moesten ook de moeilijke keuze maken om wel of niet in verzet te komen tegen de nazi's. Dit bewijst dat de oorlog ons nog steeds bezighoudt.
+            </p>
         </div>
         
+        <!-- Kaart 2: Maatschappelijk Spoor -->
         <div class="glass-card rounded-lg p-8" data-aos="fade-left" data-aos-delay="300">
-            <div class="w-full h-56 bg-[#0a0a0a] rounded mb-6 flex items-center justify-center border border-gray-700/50 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1611077544955-46e319989ba1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Krantenknipsel 2" class="w-full h-full object-cover opacity-70 zoomable-img" onclick="openLightbox(this.src)">
+            <div class="w-full h-56 bg-[#0a0a0a] rounded mb-6 flex items-center justify-center border border-gray-700/50 overflow-hidden relative group">
+                <!-- VUL HIER EEN SCREENSHOT VAN HET NIEUWSARTIKEL IN -->
+                <img src="https://images.unsplash.com/photo-1584483766114-2ceaeea7350c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nieuwsartikel NCDR" class="w-full h-full object-cover opacity-60 zoomable-img" onclick="openLightbox(this.src)">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-100 group-hover:opacity-0 transition duration-300">
+                     <p class="text-sm text-gray-300 italic">Voeg screenshot Nieuwsartikel toe</p>
+                </div>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3 museum-font">Titel van de Bron</h3>
-            <p class="text-gray-400 text-base leading-relaxed">Hou de tekst kort op het scherm zodat de bezoekers vragen aan jullie moeten stellen!</p>
+            <h3 class="text-2xl font-bold text-white mb-3 museum-font">Maatschappij: Gedrag en Patronen</h3>
+            <p class="text-gray-400 text-base leading-relaxed">
+                Zien we het gedrag van toen nu nog terug? Helaas wel. Toen werden groepen zoals de Joden buitengesloten en gediscrimineerd. Een actueel rapport (Bureau NCDR) laat zien dat nu veel moslimjongeren in Nederland zich buitengesloten voelen op school en bij stages. De overeenkomst is dat mensen nog steeds anders behandeld worden vanwege hun afkomst of geloof.
+            </p>
         </div>
     </div>
 </section>
@@ -200,19 +217,31 @@
             <ul class="space-y-6 text-gray-300 text-lg">
                 <li class="flex items-start">
                     <span class="accent-color mr-4 text-2xl">•</span>
-                    <div><span class="text-white font-bold tracking-wide">Afbeelding Tijdbalk:</span> Eigen ontwerp (Bram & Jari)</div>
+                    <div>
+                        <span class="text-white font-bold tracking-wide">75 Jaar Vrijheid Overijssel:</span><br>
+                        <a href="https://overijssel.75jaarvrijheid.nl/thema-overijssel/verzet" target="_blank" class="text-sm text-[#d4af37] hover:underline break-all">https://overijssel.75jaarvrijheid.nl/thema-overijssel/verzet</a>
+                    </div>
                 </li>
                 <li class="flex items-start">
                     <span class="accent-color mr-4 text-2xl">•</span>
-                    <div><span class="text-white font-bold tracking-wide">Website/Boek:</span> [Naam bron invullen]</div>
+                    <div>
+                        <span class="text-white font-bold tracking-wide">HistorGraphic: Oorlog in Overijssel:</span><br>
+                        <a href="https://historgraphic.com/oorlog-in-overijssel/" target="_blank" class="text-sm text-[#d4af37] hover:underline break-all">https://historgraphic.com/oorlog-in-overijssel/</a>
+                    </div>
                 </li>
                 <li class="flex items-start">
                     <span class="accent-color mr-4 text-2xl">•</span>
-                    <div><span class="text-white font-bold tracking-wide">Documentaire/Video:</span> [Naam bron invullen]</div>
+                    <div>
+                        <span class="text-white font-bold tracking-wide">Collectie Overijssel:</span><br>
+                        <a href="https://collectieoverijssel.nl/zoekhulp/tweede-wereldoorlog/" target="_blank" class="text-sm text-[#d4af37] hover:underline break-all">https://collectieoverijssel.nl/zoekhulp/tweede-wereldoorlog/</a>
+                    </div>
                 </li>
                 <li class="flex items-start">
                     <span class="accent-color mr-4 text-2xl">•</span>
-                    <div><span class="text-white font-bold tracking-wide">Archief:</span> [Naam bron invullen, bijv. NIOD]</div>
+                    <div>
+                        <span class="text-white font-bold tracking-wide">Oorlogsbronnen Enschede:</span><br>
+                        <a href="https://www.oorlogsbronnen.nl/plaats/Enschede" target="_blank" class="text-sm text-[#d4af37] hover:underline break-all">https://www.oorlogsbronnen.nl/plaats/Enschede</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -221,8 +250,8 @@
 
 <!-- Footer -->
 <footer class="bg-[#09090a] py-10 text-center border-t border-gray-800">
-    <p class="text-gray-500 text-sm uppercase tracking-[0.2em]">Gemaakt door Bram & Jari</p>
-    <p class="text-gray-700 text-xs mt-2">Project Geschiedenis - Gallery Walk</p>
+    <p class="text-gray-500 text-sm uppercase tracking-[0.2em]">Project Geschiedenis - Mavo 3</p>
+    <p class="text-gray-700 text-xs mt-2">Heden en verleden - Meer dan geschiedenis!</p>
 </footer>
 
 <!-- Scripts voor interactie -->
