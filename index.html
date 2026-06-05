@@ -32,19 +32,14 @@
 <header class="max-w-5xl mx-auto bg-blue-600 text-white p-10 rounded shadow text-center mb-10">
     <h2 class="text-xl mb-2">De Tweede Wereldoorlog</h2>
     <h1 class="text-4xl font-bold mb-4">Het Verzet in Overijssel</h1>
-    <p class="mb-8">Heden en verleden - Meer dan geschiedenis!</p>
-    
-    <!-- Simpele knop voor groot scherm -->
-    <button onclick="zetOpGrootScherm()" class="bg-white text-blue-600 font-bold py-2 px-4 rounded border-2 border-white hover:bg-gray-200">
-        Start Presentatie (Groot Scherm)
-    </button>
+    <p>Heden en verleden - Meer dan geschiedenis!</p>
 </header>
 
 <!-- De Tijdbalk -->
 <section id="tijdbalk" class="max-w-5xl mx-auto bg-white p-8 rounded shadow mb-10">
     <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 pb-2">De Tijdbalk</h2>
     
-    <!-- Zorg dat 'image_00d800.jpg' in jullie mapje staat -->
+    <!-- Zorg dat de naam van dit plaatje exact overeenkomt met de naam op GitHub -->
     <div class="text-center">
         <img src="image_00d800.jpg" alt="Tijdbalk Het Verzet" class="mx-auto w-full max-w-4xl border border-gray-300">
     </div>
@@ -62,7 +57,7 @@
             </p>
         </div>
         <div class="md:w-1/2 bg-gray-200 flex items-center justify-center p-2 rounded">
-            <!-- VUL HIER DE LINK NAAR JULLIE SELFIE IN -->
+            <!-- VUL HIER DE LINK NAAR JULLIE SELFIE IN (bijv: src="selfie.jpg") -->
             <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Selfie Spoorlijn" class="w-full h-auto rounded">
         </div>
     </div>
@@ -77,7 +72,7 @@
         <div class="bg-white p-6 rounded shadow md:w-1/2">
             <h3 class="text-xl font-bold mb-2">Het Media Spoor</h3>
             <p class="font-bold text-blue-600 text-sm mb-2">Recente serie: De Joodse Raad</p>
-            <!-- VUL HIER EEN SCREENSHOT VAN DE TRAILER IN -->
+            <!-- VUL HIER DE SCREENSHOT VAN DE TRAILER IN (bijv: src="serie.jpg") -->
             <img src="https://images.unsplash.com/photo-1585241936939-f9c3ebfc3124?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="De Joodse Raad" class="w-full h-48 object-cover mb-4 rounded border border-gray-300">
             <p class="text-gray-700 text-sm">
                 De serie De Joodse Raad laat zien hoe moeilijk de keuzes waren tijdens de Tweede Wereldoorlog. Mensen probeerden te overleven en soms ook verzet te bieden tegen de nazi’s. De serie werd erg populair in Nederland. Dat laat zien dat mensen nog steeds geïnteresseerd zijn in verhalen over de oorlog en het verzet.
@@ -87,7 +82,7 @@
         <!-- Maatschappelijk Spoor Kaart -->
         <div class="bg-white p-6 rounded shadow md:w-1/2">
             <h3 class="text-xl font-bold mb-2">Het Maatschappelijk Spoor</h3>
-            <!-- VUL HIER EEN SCREENSHOT VAN HET ARTIKEL IN -->
+            <!-- VUL HIER EEN SCREENSHOT VAN HET ARTIKEL IN (bijv: src="nieuws.jpg") -->
             <img src="https://images.unsplash.com/photo-1584483766114-2ceaeea7350c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nieuwsartikel" class="w-full h-48 object-cover mb-4 rounded border border-gray-300">
             <p class="text-gray-700 text-sm mb-4">
                 Tijdens de Tweede Wereldoorlog werden mensen buitengesloten en gediscrimineerd vanwege hun afkomst of geloof. Ook nu gebeurt dat nog steeds in de samenleving. Een actueel voorbeeld is een nieuwsartikel over discriminatie van moslimjongeren in Nederland. In het artikel staat dat veel jongeren zich buitengesloten voelen op school, bij stages en in het dagelijks leven. (Bureau NCDR)
@@ -114,19 +109,6 @@
 <footer class="text-center py-6 text-gray-500 text-sm">
     <p>Mavo 3 - Praktische Opdracht Geschiedenis</p>
 </footer>
-
-<!-- Simpel script voor het grote scherm op de Chromebook -->
-<script>
-    function zetOpGrootScherm() {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen();
-        } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-        }
-    }
-</script>
 
 </body>
 </html>
