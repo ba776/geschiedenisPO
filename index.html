@@ -1,100 +1,132 @@
 <!DOCTYPE html>
-<html lang="nl" class="scroll-smooth">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Het Verzet in Overijssel - PO Geschiedenis</title>
     
+    <!-- Simpele koppeling met Tailwind CSS voor de opmaak -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #0f0f11; color: #e0e0e0; overflow-x: hidden; }
-        h1, h2, h3, .museum-font { font-family: 'Playfair Display', serif; }
-        
-        /* Design kaarten */
-        .glass-card {
-            background: rgba(26, 26, 28, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(201, 162, 99, 0.1);
-            transition: all 0.4s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(201, 162, 99, 0.5);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            transform: translateY(-5px);
-        }
-        
-        .accent-color { color: #d4af37; }
-        .accent-bg { background-color: #d4af37; }
-        
-        /* Foto's vergroten */
-        .zoomable-img {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: zoom-in;
-        }
-        .zoomable-img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
-        }
-
-        /* Presentatie Knop */
-        .btn-fullscreen {
-            background: rgba(15, 15, 17, 0.8);
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            padding: 12px 30px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse-glow 2.5s infinite;
-        }
-        .btn-fullscreen:hover {
-            background: #d4af37;
-            color: #0f0f11;
-            animation: none;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-        }
-
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-        }
-
-        /* Citaatblok voor conclusie */
-        .museum-quote {
-            border-left: 4px solid #d4af37;
-            background: linear-gradient(90deg, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0) 100%);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-        }
+        /* Heel simpel standaard lettertype, geen gekke ontwerpen */
+        body { font-family: Arial, sans-serif; }
     </style>
 </head>
-<body class="antialiased selection:bg-yellow-700 selection:text-white">
+<body class="bg-gray-100 text-gray-900">
 
-<div id="scroll-progress" class="fixed top-0 left-0 h-1 accent-bg z-[60] transition-all duration-150" style="width: 0%;"></div>
+<!-- Navigatiebalk -->
+<nav class="bg-white p-4 shadow mb-8 sticky top-0 border-b-4 border-blue-600">
+    <div class="max-w-5xl mx-auto flex justify-between items-center font-bold">
+        <div class="text-xl">PO Geschiedenis</div>
+        <ul class="flex space-x-6 text-blue-600">
+            <li><a href="#tijdbalk" class="hover:underline">Tijdbalk</a></li>
+            <li><a href="#fysiek-spoor" class="hover:underline">Fysiek Spoor</a></li>
+            <li><a href="#media-spoor" class="hover:underline">Media & Maatschappij</a></li>
+            <li><a href="#bronnen" class="hover:underline">Bronnen</a></li>
+        </ul>
+    </div>
+</nav>
 
-<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
-    <button class="absolute top-6 right-8 text-[#d4af37] text-5xl hover:text-white transition duration-300">&times;</button>
-    <img id="lightbox-img" src="" alt="Vergrote afbeelding" class="max-h-[85vh] max-w-[90vw] object-contain rounded border border-gray-700">
-    <p class="text-[#d4af37] mt-6 tracking-widest uppercase text-sm font-bold">Klik om te sluiten</p>
-</div>
+<!-- Titel Scherm -->
+<header class="max-w-5xl mx-auto bg-blue-600 text-white p-10 rounded shadow text-center mb-10">
+    <h2 class="text-xl mb-2">De Tweede Wereldoorlog</h2>
+    <h1 class="text-4xl font-bold mb-4">Het Verzet in Overijssel</h1>
+    <p class="mb-8">Heden en verleden - Meer dan geschiedenis!</p>
+    
+    <!-- Simpele knop voor groot scherm -->
+    <button onclick="zetOpGrootScherm()" class="bg-white text-blue-600 font-bold py-2 px-4 rounded border-2 border-white hover:bg-gray-200">
+        Start Presentatie (Groot Scherm)
+    </button>
+</header>
 
-<nav class="fixed w-full z-40 bg-[#0f0f11]/90 backdrop-blur-md border-b border-gray-800">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="text-xl museum-font font-bold tracking-widest text-white uppercase">
-            HET VERZET IN <span class="accent-color">OVERIJSSEL</span>
+<!-- De Tijdbalk -->
+<section id="tijdbalk" class="max-w-5xl mx-auto bg-white p-8 rounded shadow mb-10">
+    <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 pb-2">De Tijdbalk</h2>
+    
+    <!-- Zorg dat 'image_00d800.jpg' in jullie mapje staat -->
+    <div class="text-center">
+        <img src="image_00d800.jpg" alt="Tijdbalk Het Verzet" class="mx-auto w-full max-w-4xl border border-gray-300">
+    </div>
+</section>
+
+<!-- Fysiek Spoor -->
+<section id="fysiek-spoor" class="max-w-5xl mx-auto bg-white p-8 rounded shadow mb-10">
+    <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 pb-2">1. Fysiek Spoor</h2>
+    
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+            <h3 class="text-xl font-bold mb-2">Spoorlijn Enschede-Gronau</h3>
+            <p class="mb-4 text-gray-700 leading-relaxed">
+                Deze grensspoorlijn werd in september 1944 na het uitbreken van de spoorwegstaking door het verzet gebruikt voor sabotage. Later aan het einde van de oorlog in maart 1945 werd het spoor ook ingezet voor 'spooktreinen', waarmee de Duitsers dwangarbeiders en gevangenen door de regio vervoerden.
+            </p>
         </div>
-        <ul class="hidden lg:flex space-x-8 text-xs font-bold tracking-widest text-gray-400">
-            <li><a href="#tijdbalk" class="hover:text-white transition">TIJDBALK</a></li>
-            <li><a href="#fysiek-spoor" class="hover:text-white transition">FYSIEK SPOOR</a></li>
-            <li>
+        <div class="md:w-1/2 bg-gray-200 flex items-center justify-center p-2 rounded">
+            <!-- VUL HIER DE LINK NAAR JULLIE SELFIE IN -->
+            <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Selfie Spoorlijn" class="w-full h-auto rounded">
+        </div>
+    </div>
+</section>
+
+<!-- Media en Maatschappij -->
+<section id="media-spoor" class="max-w-5xl mx-auto mb-10">
+    <h2 class="text-2xl font-bold mb-4">2. Media & Maatschappij</h2>
+    
+    <div class="flex flex-col md:flex-row gap-6">
+        <!-- Media Spoor Kaart -->
+        <div class="bg-white p-6 rounded shadow md:w-1/2">
+            <h3 class="text-xl font-bold mb-2">Het Media Spoor</h3>
+            <p class="font-bold text-blue-600 text-sm mb-2">Recente serie: De Joodse Raad</p>
+            <!-- VUL HIER EEN SCREENSHOT VAN DE TRAILER IN -->
+            <img src="https://images.unsplash.com/photo-1585241936939-f9c3ebfc3124?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="De Joodse Raad" class="w-full h-48 object-cover mb-4 rounded border border-gray-300">
+            <p class="text-gray-700 text-sm">
+                De serie De Joodse Raad laat zien hoe moeilijk de keuzes waren tijdens de Tweede Wereldoorlog. Mensen probeerden te overleven en soms ook verzet te bieden tegen de nazi’s. De serie werd erg populair in Nederland. Dat laat zien dat mensen nog steeds geïnteresseerd zijn in verhalen over de oorlog en het verzet.
+            </p>
+        </div>
+        
+        <!-- Maatschappelijk Spoor Kaart -->
+        <div class="bg-white p-6 rounded shadow md:w-1/2">
+            <h3 class="text-xl font-bold mb-2">Het Maatschappelijk Spoor</h3>
+            <!-- VUL HIER EEN SCREENSHOT VAN HET ARTIKEL IN -->
+            <img src="https://images.unsplash.com/photo-1584483766114-2ceaeea7350c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nieuwsartikel" class="w-full h-48 object-cover mb-4 rounded border border-gray-300">
+            <p class="text-gray-700 text-sm mb-4">
+                Tijdens de Tweede Wereldoorlog werden mensen buitengesloten en gediscrimineerd vanwege hun afkomst of geloof. Ook nu gebeurt dat nog steeds in de samenleving. Een actueel voorbeeld is een nieuwsartikel over discriminatie van moslimjongeren in Nederland. In het artikel staat dat veel jongeren zich buitengesloten voelen op school, bij stages en in het dagelijks leven. (Bureau NCDR)
+            </p>
+            <div class="bg-blue-50 p-3 rounded border-l-4 border-blue-600 italic text-sm text-gray-800">
+                "Toen zagen we dat Joden en andere groepen werden buitengesloten. Nu zien we dat moslimjongeren ook te maken hebben met discriminatie. De overeenkomst is dat mensen nog steeds anders behandeld worden vanwege hun afkomst of geloof."
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bronnenlijst -->
+<section id="bronnen" class="max-w-5xl mx-auto bg-white p-8 rounded shadow mb-10">
+    <h2 class="text-2xl font-bold mb-4 border-b-2 border-gray-200 pb-2">Bronnenlijst</h2>
+    <ul class="list-decimal list-inside space-y-2 text-blue-600">
+        <li><a href="https://overijssel.75jaarvrijheid.nl/thema-overijssel/verzet" target="_blank" class="hover:underline">overijssel.75jaarvrijheid.nl/thema-overijssel/verzet</a></li>
+        <li><a href="https://historgraphic.com/oorlog-in-overijssel/" target="_blank" class="hover:underline">historgraphic.com/oorlog-in-overijssel/</a></li>
+        <li><a href="https://collectieoverijssel.nl/zoekhulp/tweede-wereldoorlog/" target="_blank" class="hover:underline">collectieoverijssel.nl/zoekhulp/tweede-wereldoorlog/</a></li>
+        <li><a href="https://www.oorlogsbronnen.nl/plaats/Enschede" target="_blank" class="hover:underline">oorlogsbronnen.nl/plaats/Enschede</a></li>
+    </ul>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-6 text-gray-500 text-sm">
+    <p>Mavo 3 - Praktische Opdracht Geschiedenis</p>
+</footer>
+
+<!-- Simpel script voor het grote scherm op de Chromebook -->
+<script>
+    function zetOpGrootScherm() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
